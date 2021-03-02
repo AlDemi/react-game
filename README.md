@@ -2,7 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# 2048-game
+
 ## Available Scripts
+
+This is the [react](https://reactjs.org/) the 2048 game designed by Alexei Demidenko https://github.com/AlDemi
 
 In the project directory, you can run:
 
