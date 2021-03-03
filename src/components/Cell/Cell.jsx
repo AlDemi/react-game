@@ -1,5 +1,5 @@
-// import styles from './Cell.module.css'
+import styles from './Cell.module.css'
 
 export const Cell = ({ num }) => {
-  return <div>{num}</div>
+  return <div className={styles.cell}>{num}</div>
 }
