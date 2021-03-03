@@ -270,6 +270,20 @@ function App() {
     return true
   }
 
+  const resetGame = () => {
+    setGameOver(false)
+    const emptyGrid = [
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+    ]
+
+    addRandomTileNumber(emptyGrid)
+    addRandomTileNumber(emptyGrid)
+    setData(emptyGrid)
+  }
+
   const handleKeyDown = (event) => {
     if (gameOver) {
       return
