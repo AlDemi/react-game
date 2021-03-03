@@ -1,6 +1,7 @@
 import cloneDeep from 'lodash.clonedeep'
 import { useEffect, useState } from 'react'
 import { Board } from './components/Board/Board'
+import { useEvent } from './utils/event'
 
 function App() {
   const UP_ARROW_KEY_NUMBER = 38
@@ -257,6 +258,8 @@ function App() {
   useEffect(() => {
     initialize()
   }, [])
+
+  useEvent('keydown', handleKeyDown)
 
   return <Board data={data} />
 }
