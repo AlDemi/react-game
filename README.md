@@ -2,7 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# 2048-game
+## 2048-game
+
+Demo version https://aldemi.github.io/react-game/
 
 ## Available Scripts
 
