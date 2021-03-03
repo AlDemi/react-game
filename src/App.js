@@ -16,6 +16,8 @@ function App() {
     [0, 0, 0, 0],
   ])
 
+  const [gameOver, setGameOver] = useState(false)
+
   const initialize = () => {
     let newGrid = cloneDeep(data)
     console.log('New greed: ', newGrid)
@@ -42,6 +44,15 @@ function App() {
       if (newGrid[rand1][rand2] === 0) {
         newGrid[rand1][rand2] = Math.random() > 0.5 ? 2 : 4
         added = true
+      }
+      if (attempts > 50) {
+        gridFull = true
+        let gameOver = checkIfGameOver()
+        if (gameOver) {
+          alert('game over')
+          setGameOver(true)
+        }
+        setGameOver(true)
       }
     }
   }
@@ -227,7 +238,43 @@ function App() {
     }
   }
 
+  const checkIfGameOver = () => {
+    console.log('CHECKING GAME OVER')
+    let checker = moveLeft(true)
+
+    if (JSON.stringify(data) !== JSON.stringify(checker)) {
+      return false
+    }
+
+    let checker2 = moveDown(true)
+    console.log('CHECKER DOWN')
+    console.table(data)
+    console.table(checker2)
+
+    if (JSON.stringify(data) !== JSON.stringify(checker2)) {
+      return false
+    }
+
+    let checker3 = moveRight(true)
+
+    if (JSON.stringify(data) !== JSON.stringify(checker3)) {
+      return false
+    }
+
+    let checker4 = moveUp(true)
+
+    if (JSON.stringify(data) !== JSON.stringify(checker4)) {
+      return false
+    }
+
+    return true
+  }
+
   const handleKeyDown = (event) => {
+    if (gameOver) {
+      return
+    }
+
     switch (event.keyCode) {
       case UP_ARROW_KEY_NUMBER:
         // alert("up");
@@ -252,6 +299,13 @@ function App() {
         break
       default:
         break
+    }
+
+    let gameOver2 = checkIfGameOver()
+
+    if (gameOver2) {
+      alert('Game over')
+      setGameOver(true)
     }
   }
 
