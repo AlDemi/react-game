@@ -7,7 +7,7 @@ export const Cell = ({ num }) => {
       className={styles.cell}
       style={{
         background: getColors(num),
-        color: num === 2 || num === 4 ? '#645B52' : '#F7F4EF',
+        // color: num === 2 || num === 4 ? '#645B52' : '#F7F4EF',
       }}>
       {num !== 0 ? num : ''}
     </div>

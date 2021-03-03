@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import { Cell } from '../Cell/Cell'
 import { Row } from '../Row/Row'
 import styles from './Board.module.css'
 

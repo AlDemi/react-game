@@ -1,28 +1,28 @@
 export const getColors = (num) => {
   switch (num) {
     case 2:
-      return '#EBDCD0'
+      return '#ff5252'
     case 4:
-      return '#E9DBBA'
+      return '#4caf50'
     case 8:
-      return '#E9A067'
+      return '#9c27b0'
     case 16:
-      return '#F08151'
+      return '#673ab7'
     case 32:
-      return '#F2654F'
+      return '#3f51b5'
     case 64:
-      return '#F1462C'
+      return '#2196f3'
     case 128:
-      return '#E7C65E'
+      return '#03a9f4'
     case 256:
-      return '#E8C350'
+      return '#00bcd4'
     case 512:
-      return '#E8BE40'
+      return '#009688'
     case 1024:
-      return '#E8BB31'
+      return '#4caf50'
     case 2048:
-      return '#E7B723'
+      return '#8bc34a'
     default:
-      return '#C2B3A3'
+      return '#303030'
   }
 }
