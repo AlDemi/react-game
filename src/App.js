@@ -3,6 +3,11 @@ import { useEffect, useState } from 'react'
 import { Board } from './components/Board/Board'
 
 function App() {
+  const UP_ARROW_KEY_NUMBER = 38
+  const DOWN_ARROW_KEY_NUMBER = 40
+  const LEFT_ARROW_KEY_NUMBER = 37
+  const RIGHT_ARROW_KEY_NUMBER = 39
+
   const [data, setData] = useState([
     [0, 0, 0, 0],
     [0, 0, 0, 0],
@@ -218,6 +223,34 @@ function App() {
       return b
     } else {
       setData(b)
+    }
+  }
+
+  const handleKeyDown = (event) => {
+    switch (event.keyCode) {
+      case UP_ARROW_KEY_NUMBER:
+        // alert("up");
+        // console.table(data);
+        moveUp()
+        // console.table(data);
+        break
+      case DOWN_ARROW_KEY_NUMBER:
+        // console.table(data);
+        moveDown()
+        // console.table(data);
+        break
+      case LEFT_ARROW_KEY_NUMBER:
+        // console.table(data);
+        moveLeft()
+        // console.table(data);
+        break
+      case RIGHT_ARROW_KEY_NUMBER:
+        // console.table(data);
+        moveRight()
+        // console.table(data);
+        break
+      default:
+        break
     }
   }
 
